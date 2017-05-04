@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function ()
+            {
+                $('#formregister').validate({
+                    rules: {
+                        nome: {
+                            required: true,
+                            minlength: 5,
+                            maxlength: 50
+                        },
+                        telefone: {
+                            required: true,
+                            minlength: 10,
+                            maxlength: 15
+                        },
+                        negocio: {
+                            required: true
+                        },
+                        mercadoria: {
+                            required: true,
+                            minlength: 5,
+                            maxlength: 100
+                        },
+                        tipo: {
+                            required: true,
+                            minlength: 5,
+                            maxlength: 100
+                        },
+                        quantidade: {
+                            required: true,
+                            minlength: 1,
+                            maxlength: 4
+                        },
+                        preco: {
+                            required: true,
+                            minlength: 1,
+                            maxlength: 10
+                        }
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <form action="mainServlet" method="post" id="formregister">
+            <table>
+                <tr>
+                    <td>Nome completo:</td>
+                    <td><input type="text" name="nome"/></td>
+                </tr>
+                <tr>
+                    <td>Seu telefone:</td>
+                    <td><input type="tel" name="telefone"></td>
+                </tr>
+                <tr>
+                    <td>Tipo Negocio</td>
+                    <td>
+                        <select name="negocio">
+                            <option value="compra">Compra</option>
+                            <option value="venda">Venda</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nome Mercadoria</td>
+                    <td><input type="text" name="mercadoria"/></td>
+                </tr>
+                <tr>
+                    <td>Tipo Mercadoria</td>
+                    <td><input type="text" name="tipo"/></td>
+                </tr>
+                <tr>
+                    <td>Quantidade Mercadoria</td>
+                    <td><input type="number" name="quantidade" step="1" value="1"></td>
+                </tr>
+                <tr>
+                    <td>Preço unidade Mercadoria</td>
+                    <td><input type="number" name="preco" step="10" value="0"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                        <input type="submit" value="Inserir Cadastro"/>
+                    </td>
+                </tr>   
+            </table>    
+        </form>
+
+    </body>
+</html>
